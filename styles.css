@@ -1,0 +1,122 @@
+:root{
+    --primary-color: #4a90e2; /* Main blue color */
+    --secondary-color: #f39c12; /* Accent orange color */
+    --background-color: #f0f4f8; /* Light blue-gray background */
+    --text-color: #333; /* Dark gray for text */
+    --error-color: #e74c3c; /* Red for error messages */
+    --success-color: #2ecc71; /* Green for success messages */
+}
+
+body{
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease;
+}
+
+.container {
+    max-width: 500px;
+    margin: 40px auto; 
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transform: translateY(20px); 
+    opacity: 0; 
+    animation: fadeInUp 0.5s ease forwards; 
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 30px; 
+    font-size: 2.5em; 
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 15px;
+    font-weight: bold;
+    color: var(--primary-color);
+    transition: color 0.3s ease; 
+}
+
+input, textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px; 
+    transition: all 0.3s ease; 
+}
+
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2); 
+}
+
+
+button {
+    margin-top: 25px;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease; 
+}
+
+
+button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+
+.error {
+    color: var(--error-color);
+    font-size: 0.9em;
+    margin-top: 5px;
+    animation: shake 0.5s ease-in-out;
+}
+
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+
+#successMessage {
+    color: var(--success-color);
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    animation: fadeIn 1s ease;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
